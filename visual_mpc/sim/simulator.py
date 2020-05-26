@@ -36,11 +36,11 @@ class Sim(object):
             for i in range(self._hyperparams['start_index'], self._hyperparams['end_index']+1):
                 self.take_sample(i)
         else:
-            itr = self._counter.ret_increment()
+            itr = self._counter.ret_increment
             while itr < self._hyperparams['ntraj']:
                 print('taking sample {} of {}'.format(itr, self._hyperparams['ntraj']))
                 self.take_sample(itr)
-                itr = self._counter.ret_increment()
+                itr = self._counter.ret_increment
         self.agent.cleanup()
 
     def take_sample(self, sample_index):
